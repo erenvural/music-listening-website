@@ -1,0 +1,27 @@
+{{include 'templateheader.html'}}
+<div id="portfolio" class="container">
+{{=form}}
+</div>
+<div id="portfolio" class="container" style="padding:15px">
+    <!--  style= "background-image : url('{{=URL('static/template','assets/css/images/bg-3.jpg')}}'); -->
+{{for artist_list in artists:}}
+
+    <div class="col-sm-3">
+        <a href="artist/{{=artist_list.artist_url}}">
+        <div class="box">
+            <img style="margin-top:10px;margin-left: 20px" width="200px" height="200px" src="..\static\template\images\artists\{{=artist_list.artist_url}}.jpg">
+
+            <h3 style="margin-left:-25px; text-align: center"><b><br>{{=artist_list.artist_name}}</b></h3>
+            <!--<p style="margin: 0 5px; line-height: 130%"><br><b>Genre Name | </b> {{=artist_list.genre_name.genre_name}}
+            </p>
+            <p style="margin: 0 5px; line-height: 130%"><b>Years Active | </b>  {{=artist_list.years_active}}</p>
+            <p style="margin: 0 5px; line-height: 130%"><b>Awards | </b>  {{=artist_list.awards}}</p>-->
+
+        </div></a>
+    </div>
+
+{{pass}}
+
+</div>
+
+</body></html>

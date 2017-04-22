@@ -1,0 +1,107 @@
+<!DOCTYPE HTML>
+
+<html>
+<head>
+    <title>Footprint on the MOON!</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="stylesheet" href="{{=URL('static/template', 'assets/css/main.css')}}"/>
+</head>
+<body class="landing">
+
+<!-- Header -->
+<header id="header" class="alt">
+    <a href="#nav">Menu</a>
+
+</header>
+<!-- Nav -->
+<nav id="nav">
+    <ul class="links">
+    {{if not auth.user:}}
+    {{menu = [('index', 'Homepage'),('genres','Genres'),('artists','Artists'),('albums', 'Albums'),
+    ('alltracks','All Tracks'),('about','About'),('report','Report'),('user','LogIn/Signup')]}}
+    {{elif auth.user.id == 1:}}
+    {{menu = [('index', 'Homepage'),('genres','Genres'),('artists','Artists'),('albums', 'Albums'),
+    ('alltracks','All Tracks'),('contact','Contact'),('about','About'),('report','Report'),('management','Management'),('user','Profile'),('user/logout','Logout')]}}
+    {{else:}}
+    {{menu = [('index', 'Homepage'),('genres','Genres'),('artists','Artists'),('albums', 'Albums'),
+    ('alltracks','All Tracks'),('contact','Contact'),('about','About'),('report','Report'),('user','Profile'),('user/logout','Logout')]}}
+    {{pass}}
+
+
+    {{for m in menu:}}
+        <li {{if m[0] == request.function:}}class="current_page_item"{{pass}}>
+        {{if m[0]!='user':}}
+            <a href="{{=URL('default', m[0])}}">{{=m[1]}}</a>
+        {{else:}}
+            <a href="{{=URL('default', m[0], args="profile")}}">{{=m[1]}}</a>
+        {{pass}}
+        </li>
+    {{pass}}
+    </ul>
+</nav>
+
+<nav id="navleft">
+    <ul>
+
+        <li><a href="/music/default/index"><img class="imageleft"
+                                                src="{{=URL('static/template', 'images/indexbuttons/index.png')}}"
+                                                title="Homepage"
+                                                width="40px" height="40px" style="margin-top: 210px"/> </a></li>
+
+        <li><a href="/music/default/genres"><img class="imageleft"
+                                                 src="{{=URL('static/template', 'images/indexbuttons/genre.png')}}"
+                                                 title="Genres"
+                                                 width="40px" height="40px" style="margin-top: 20px"/> </a></li>
+
+        <li><a href="/music/default/artists"><img class="imageleft"
+                                                  src="{{=URL('static/template', 'images/indexbuttons/artist.png')}}"
+                                                  title="Artists"
+                                                  width="40px" height="40px" style="margin-top: 20px"/> </a></li>
+
+        <li><a href="/music/default/albums"><img class="imageleft"
+                                                 src="{{=URL('static/template', 'images/indexbuttons/album.png')}}"
+                                                 title="Albums"
+                                                 width="40px" height="40px" style="margin-top: 20px"/> </a></li>
+        <li><a href="/music/default/alltracks"><img class="imageleft"
+                                                    src="{{=URL('static/template', 'images/indexbuttons/alltracks.png')}}"
+                                                    title="All Tracks"
+                                                    width="40px" height="40px" style="margin-top: 20px"/> </a></li>
+        <li><a href="/music/default/contact"><img class="imageleft"
+                                                  src="{{=URL('static/template', 'images/indexbuttons/contact.png')}}"
+                                                  title="About"
+                                                  width="40px" height="40px" style="margin-top: 20px"/> </a></li>
+        <li><a href="/music/default/user"><img class="imageleft"
+                                               src="{{=URL('static/template', 'images/indexbuttons/contact.png')}}"
+                                               title="About"
+                                               width="40px" height="40px" style="margin-top: 20px"/> </a></li>
+
+    </ul>
+</nav>
+<!-- Banner -->
+{{
+import random
+id = random.randint(1, 71)
+}}
+{{for quote_list in quotes:}}
+{{if quote_list.id == id:}}
+
+<section id="banner">
+    <i class="icon fa-volume-up"></i>
+    <ul class="actions">
+        <link rel="stylesheet" href="{{=URL('static/template', 'assets/css/searchbox.css')}}"/>
+
+    {{=form}}
+
+        <p>
+            "{{=quote_list.quote_text}}"
+        </p>
+
+        <p2>
+            -{{=quote_list.quote_owner}}
+        </p2>
+    </ul>
+{{pass}}
+{{pass}}
+
+</section>

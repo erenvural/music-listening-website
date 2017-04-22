@@ -1,0 +1,46 @@
+<!DOCTYPE HTML>
+<!--
+	Retrospect by TEMPLATED
+	templated.co @templatedco
+	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+-->
+<html>
+	<head>
+		<title>Project MUSIC</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="stylesheet" href="{{=URL('static/template', 'assets/css/main.css')}}" />
+	</head>
+
+	<body class="landing">
+        	<!-- Header -->
+        
+			<header id="header" class="alt">
+				<!-- <h1><a href="index.html">PROJECT</a></h1> -->
+				<a href="#nav">Menu</a>
+			</header>
+<!-- Nav -->
+			<nav id="nav">
+				<ul class="links">
+					<li><a href="/music/default/index.html">Homepage</a></li>
+                    <li><a href="/music/default/albums">Albums</a></li>
+                    <li><a href="/music/default/artists">Artists</a></li>
+                    <li><a href="/music/default/genres">Genres</a></li>
+                    <li><a href="/music/default/alltracks">All Tracks</a></li>
+                    <li><a href="/music/default/contact">Contact</a></li>
+                    <li><a href="/music/default/about">About</a></li>
+				</ul>
+			</nav>
+<!-- Banner -->
+			<section id="banner">
+				<i class="icon fa-volume-up"></i>
+				<ul class="actions">
+                    <link rel="stylesheet" href="{{=URL('static/template', 'assets/css/searchbox.css')}}" />
+                        <form>
+                            <input type="text" id="search" color="black" placeholder="Find a song, album or artist..." required>
+                        </form>
+                        <h1>
+                            asdasdsd
+                    </h1>
+				</ul>
+			</section>

@@ -1,0 +1,134 @@
+{{include 'templateheader.html'}}
+<style>
+    table {
+        margin-left: 25%;
+        width: 50%;
+    }
+
+    td {
+        padding-left: 10px;
+        padding-right: 10px;
+        font-size: 20px;
+        color: white;
+    }
+</style>
+
+<table border="2" ;>
+    <tr>
+        <td style="color: #c12e2a;font-size: 25px">No</td>
+        <td style="color: #c12e2a;font-size: 25px">Subject</td>
+        <td style="color: #c12e2a;font-size: 25px">Core requirements</td>
+        <td style="color: #c12e2a;font-size: 25px">Links</td>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>Adapt a template</td>
+        <td>We adapted a template, but we used only the navbars from the templates (you can reach the original templates
+            from
+            static directory)
+        </td>
+        <td><a href="index">e.g. Index</a></td>
+    </tr>
+    <tr>
+        <td>2</td>
+        <td>Define your models by using web2py’s DAL.</td>
+
+        <td>We defined our database. (db.py)</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>3</td>
+        <td>Dynamic pages</td>
+
+        <td>All page contents are coming to the pages dynamically</td>
+        <td><a href="albums">e.g. Albums</a></td>
+    </tr>
+    <tr>
+        <td>4</td>
+        <td>User management</td>
+
+        <td>We adapted the user management system to our website.</td>
+        <td><a href="user">User</a></td>
+    </tr>
+    <tr>
+        <td>5</td>
+        <td>Using an HTML table</td>
+
+        <td>We are using HTML tables only in this page, because in our project and design 'table' is not necessary so we
+            did not use it.
+        </td>
+        <td><a href="report">Report page</a></td>
+    </tr>
+    <tr>
+        <td>6</td>
+        <td>Forms</td>
+
+        <td>We created 'contact' page that users can send a request,complain or something to us. Only users can reach
+            this page. And also the searchboxes are forms but every users can see those forms.
+        </td>
+        <td><a href="contact">Contact</a></td>
+    </tr>
+    <tr>
+        <td>7</td>
+        <td>Additional DB table</td>
+
+        <td>We added tables like genres - artists - albums - songs etc. (Every albums have an artist, every artists have
+            a genre...)
+        </td>
+        <td><a href="genres">e.g. Genres</a></td>
+    </tr>
+    <tr>
+        <td>8</td>
+        <td>Customization of template</td>
+
+        <td>We took navbars from original templates to ours and we changed many features of css to produce a good
+            looking website.
+            We used 2 templates, 1 is for index navbar, the other one is for the other pages navbar and some content
+            features.(e.g. box) Also we took the music player from internet as a javascript code and we changed the
+            players css for optimizing to
+            our website
+        </td>
+        <td><a href="alltracks.html">e.g. All Tracks</a></td>
+    </tr>
+     <tr>
+        <td>9</td>
+        <td>Better user management </td>
+        <td>We adapted the web2py user management system to our website.</td>
+        <td><a href="user">User</a></td>
+    </tr>
+    <tr>
+        <td>10</td>
+        <td>Form system </td>
+
+        <td>In contact page we used SQLFORM from db.contact, so when users fill the blanks and send, it will
+            automatically add to database.
+        </td>
+        <td><a href="contact">Contact</a></td>
+    </tr>
+    <tr>
+        <td>11</td>
+        <td>Content coverage</td>
+
+        <td>We spent many times to add datas to our database.(290 songs, 45 artists, 74 albums, 15 genres)
+        </td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>12</td>
+        <td>More dynamic content </td>
+
+        <td>We created a list of menus to take them dynamically to navbar and also we created genre list in 'All Track'
+            page that user can choose one of them(as a filtering) from above the music player.
+        </td>
+        <td><a href="alltracks">e.g. All Tracks</a></td>
+    </tr>
+    <tr>
+        <td>13</td>
+        <td>Advanced web2py</td>
+
+        <td>We user SQLFORM.grid in 'Management' pages, only Admin can reach these pages (add,delete,edit,view of
+            datas).
+        </td>
+        <td><a href="management">Management</a></td>
+    </tr>
+</table>

@@ -1,0 +1,49 @@
+{{include 'templateheader.html'}}
+<style type="text/css">
+    td {
+        padding: 0 30px 0 30px;
+    }
+</style>
+<head>
+
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="{{=URL('static/template', 'player/plugin/css/style.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{=URL('static/template', 'player/demo/css/demo.css')}}">
+    <script type="text/javascript" src="{{=URL('static/template', 'player/demo/js/jquery-1.6.1.min.js')}}"></script>
+    <script type="text/javascript"
+            src="{{=URL('static/template', 'player/plugin/jquery-jplayer/jquery.jplayer.js')}}"></script>
+    <script type="text/javascript" src="{{=URL('static/template', 'player/plugin/ttw-music-player-min.js')}}"></script>
+
+    <script type="text/javascript">
+
+        var myPlaylist = [
+        {{for songs in artist_list:}}
+            {
+                mp3: '{{=URL('static/template','musics/{0}.mp3'.format(songs.song_url))}}',
+                cover: '{{=URL('static/template','images/artists/{0}.jpg'.format(songs.artist_url.artist_url))}}',
+                title: '{{=songs.song_name}}',
+                duration: '{{=songs.song_length}}',
+                artist: '{{=songs.artist_url.artist_name}}'
+            },
+        {{pass}}
+        ]
+
+        {{if songs.artist_url.band_or_not == True:}}
+        var description = 'Members : {{=songs.artist_url.first_member}},{{=songs.artist_url.second_member}},{{=songs.artist_url.third_member}},Years Active: {{=songs.artist_url.years_active}}';
+        {{else:}}
+        var description = '{{=songs.artist_url.years_active}}';
+        {{pass}}
+    </script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('body').ttwMusicPlayer(myPlaylist, {
+                autoPlay: false,
+                description: description,
+                tracksToShow: 7
+            });
+        });
+    </script>
+
+</head>
+</html>

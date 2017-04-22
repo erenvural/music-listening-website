@@ -1,0 +1,121 @@
+<html>
+<!-- ORIGINAL LAYOUTTAN ALINTI LINKLER -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge{{=not request.is_local and ',chrome=1' or ''}}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Footprint on the MOON!</title>
+    <meta name="application-name" content="{{=request.application}}">
+    <meta name="google-site-verification" content="">
+    <!-- include stylesheets -->
+    <link rel="stylesheet" href="{{=URL('static','css/bootstrap.min.css')}}"/>
+    <link rel="stylesheet" href="{{=URL('static','css/bootstrap-theme.min.css')}}"/>
+    <link rel="stylesheet" href="{{=URL('static','css/web2py-bootstrap3.css')}}"/>
+    <link rel="shortcut icon" href="{{=URL('static','images/favicon.ico')}}" type="image/x-icon">
+    <link rel="apple-touch-icon" href="{{=URL('static','images/favicon.png')}}">
+    <!-- All JavaScript at the bottom, except for Modernizr which enables
+         HTML5 elements & feature detects -->
+    <script src="{{=URL('static','js/modernizr-2.8.3.min.js')}}"></script>
+    <!--[if lt IE 9]>
+        <script src="{{=URL('static','js/respond-1.4.2.min.js')}}"></script>
+        <![endif]-->
+    <!-- Favicons -->
+{{include 'web2py_ajax.html'}}
+
+
+{{block head}}{{end}}
+{{
+# using sidebars need to know what sidebar you want to use
+mc0 = 'col-md-12'
+mc1 = 'col-md-9'
+mc2 = 'col-md-6'
+left_sidebar_enabled = globals().get('left_sidebar_enabled', False)
+right_sidebar_enabled = globals().get('right_sidebar_enabled', False)
+middle_column = {0: mc0, 1: mc1, 2: mc2}[
+(left_sidebar_enabled and 1 or 0)+(right_sidebar_enabled and 1 or 0)]
+}}
+</head>
+
+
+<style>
+
+    #menu {
+    }
+
+    #menu ul {
+        text-align: center;
+    }
+
+    #menu li {
+        display: inline-block;
+    }
+
+    #menu li a, #menu li span {
+        display: inline-block;
+        margin-left: 0.50em;
+        padding: 1em 1.5em;
+        letter-spacing: 0.20em;
+        text-decoration: none;
+        font-size: 0.90em;
+        font-weight: 600;
+        text-transform: uppercase;
+        outline: 0;
+        color: #FFF;
+    }
+
+    #menu li:hover a, #menu li.active a, #menu li.active span {
+    }
+
+    #menu .current_page_item a {
+
+        color: #FFF;
+        background: #7C7C7C;
+        opacity: 1;
+    }
+
+    #header-wrapper {
+        overflow: hidden;
+        padding: 2.5em 0em;
+    }
+</style>
+<body>
+<div id="header-wrapper">
+    <div id="menu">
+        <ul>
+        {{if auth.user:}}
+            <!--<div class="box1">-->
+            <p style="color: #ffeb41;font-family:Open Sans, Arial, Verdana;font-size: 15px;">
+                welcome {{=auth.user.first_name}}, enjoy the music !</p>
+            <br><br>
+        {{pass}}
+
+        {{if not auth.user:}}
+        {{menu = [('index', 'Homepage'),('genres','Genres'),('artists','Artists'),('albums', 'Albums'),
+        ('alltracks','All Tracks'),('about','About'),('report','Report'),('user','LogIn')]}}
+        {{elif auth.user.id == 1:}}
+            <!--<div class="box1">-->
+        {{menu = [('index', 'Homepage'),('genres','Genres'),('artists','Artists'),('albums', 'Albums'),
+        ('alltracks','All Tracks'),('about','About'),('report','Report'),('management','Management'),('user','Profile'),('user/logout','Logout')]}}
+        {{else:}}
+        {{menu = [('index', 'Homepage'),('genres','Genres'),('artists','Artists'),('albums', 'Albums'),
+        ('alltracks','All Tracks'),('about','About'),('report','Report'),('user','Profile'),('user/logout','Logout')]}}
+        {{pass}}
+
+        {{for m in menu:}}
+            <li {{if m[0] == request.function:}}class="current_page_item"{{pass}}>
+            {{if m[0]!='user':}}
+                <a href="{{=URL('default', m[0])}}">{{=m[1]}}</a>
+            {{else:}}
+                <a href="{{=URL('default', 'user', args="profile")}}">{{=m[1]}}</a>
+            {{pass}}
+            </li>
+        {{pass}}
+
+        </ul>
+    </div>
+
+</div>
+<div class="col-md-10 col-md-offset-1">
+{{=grid}}</div>
+</body>
+</html>

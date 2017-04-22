@@ -1,0 +1,33 @@
+form {
+    
+    
+    border-radius:         3px;
+    -moz-border-radius:    3px;
+    -o-border-radius:      3px;
+    -webkit-border-radius: 3px;
+
+    
+    height: 300px;
+    margin: 50px auto;
+    padding: 0;
+    width: 350px;
+}
+
+input:focus {
+    background: transparent;
+    background: rgba(163, 135, 106, 0.2);
+
+}
+
+
+label {
+    background: transparent url(http://f.cl.ly/items/2a2Z0V0L0J1p3V082d3r/icon-search.png) no-repeat top left;
+    cursor: pointer;
+    display: block;
+    height: 17px;
+    left: 90px;
+    position: relative;
+    text-indent: -99999px;
+    top: -21px;
+    width: 16px;
+}

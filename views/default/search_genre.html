@@ -1,0 +1,25 @@
+{{include 'templateheader.html'}}
+<div id="portfolio" class="container">
+{{=form}}
+</div>
+<div id="portfolio" class="container" style="padding:15px">
+    <!--  style= "background-image : url('{{=URL('static/template','assets/css/images/bg-3.jpg')}}'); -->
+{{for genre_list in genres:}}
+
+    <div class="col-sm-3">
+        <a href="genre/{{=genre_list.genre_url}}">
+        <div class="box">
+            <img style="margin-top:10px;margin-left: 20px" width="200px" height="200px" src="..\static\template\images\genres\{{=genre_list.id}}.jpg">
+            <h3><b><br>{{=genre_list.genre_name}}</b></h3>
+            <p style="margin: 0 5px; line-height: 130%"><br><b>Cultural origins | </b> {{=genre_list.cultural_origins}}
+            </p>
+            <p style="margin: 0 5px; line-height: 130%"><b>Popular in | </b>  {{=genre_list.popular_in}}</p>
+            <p>&nbsp;</p>
+        </div></a>
+    </div>
+
+{{pass}}
+
+</div>
+
+</body></html>

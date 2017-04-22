@@ -1,0 +1,24 @@
+{{include 'templateheader.html'}}
+<div class="container">
+{{=form}}
+</div>
+<div id="portfolio" class="container" style="padding: 15px">
+{{for album_list in albums:}}
+    <div class="col-sm-3">
+        <a href="album/{{=album_list.album_url}}">
+            <div class="box">
+                <img style="margin-top:10px;margin-left: 20px" width="200px" height="200px"
+                     src="..\static\template\images\albums\{{=album_list.album_url}}.jpg">
+                <h3 style="margin-top: 8px; line-height: 100%"><b>{{=album_list.album_name}}</b></h3>
+                <p style="margin: 0 5px; line-height: 130%"><b>Owner |</b>  {{=album_list.artist_name.artist_name}}</p>
+                <!--<p style="margin: 0 5px; line-height: 130%"><b>Released Date |</b>  {{=album_list.released}}</p>
+            <p style="margin: 0 5px; line-height: 130%"><b>Genre |</b> {{=album_list.genre_name.genre_name}}</p>-->
+                <p style="margin: 0 5px; line-height: 130%"><b>Length |</b> {{=album_list.album_length}}</p>
+                <p style="margin: 0 5px; line-height: 130%"><b>Number of Songs |</b> {{=album_list.number_of_songs}}</p>
+                <p style="margin: 0 5px; line-height: 130%">&nbsp;</p>
+            </div>
+        </a>
+    </div>
+{{pass}}
+</div>
+</body></html>

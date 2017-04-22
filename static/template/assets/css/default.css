@@ -1,0 +1,458 @@
+html, body {
+    height: 100%;
+}
+
+body {
+    margin: 0px;
+    padding: 0px;
+    background: #131319;
+
+    background-image: url("images/1.png");
+    background-size: fixed;
+    background-repeat: repeat;
+
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 12pt;
+    font-weight: 400;
+    color: #000000;
+}
+
+h1, h2, h3 {
+
+    margin: 0;
+    padding: 0;
+}
+
+p, ol, ul {
+    margin-top: 0;
+}
+
+ol, ul {
+    padding: 0;
+    list-style: none;
+}
+
+p {
+    line-height: 180%;
+}
+
+strong {
+}
+
+a {
+    color: #FFFFFF;
+
+}
+
+a:hover {
+    text-decoration: none;
+    background-color: #d9534f;
+    color: white;
+
+}
+
+.button-small {
+    width: 110px;
+}
+
+.container {
+    margin: 0px auto;
+    width: 1200px;
+}
+
+.baslik a:hover {
+    background-color: transparent ;
+}
+
+.baslik:hover {
+    background-color: transparent ;
+}
+/*********************************************************************************/
+/* Form Style                                                                    */
+/*********************************************************************************/
+
+form {
+}
+
+form label {
+    display: block;
+    text-align: left;
+    margin-bottom: 0.5em;
+
+}
+
+form .submit {
+    margin-top: 2em;
+    background: #121218;
+    border-radius: 8px;
+    line-height: 1.5em;
+    font-size: 1.3em;
+}
+
+form input.text,
+form select,
+form textarea {
+    position: relative;
+    -webkit-appearance: none;
+    display: block;
+    border: 0;
+    background: #fff;
+    background: rgba(255, 255, 255, 0.75);
+    width: 100%;
+    border-radius: 0.50em;
+    margin: 1em 0em;
+    padding: 1.50em 1em;
+    box-shadow: inset 0 0.1em 0.1em 0 rgba(0, 0, 0, 0.05);
+    border: solid 1px rgba(0, 0, 0, 0.15);
+    -moz-transition: all 0s ease-in-out;
+    -webkit-transition: all 0s ease-in-out;
+    -o-transition: all 0s ease-in-out;
+    -ms-transition: all 0s ease-in-out;
+    transition: all 0s ease-in-out;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 1em;
+    outline: none;
+}
+
+form input.text:hover,
+form select:hover,
+form textarea:hover {
+
+}
+
+form input.text:focus,
+form select:focus,
+form textarea:focus {
+    box-shadow: 0 0 2px 1px #E0E0E0;
+    background: #fff;
+}
+
+form textarea {
+    min-height: 12em;
+}
+
+form .formerize-placeholder {
+    color: #555 !important;
+}
+
+form ::-webkit-input-placeholder {
+    color: #555 !important;
+}
+
+form :-moz-placeholder {
+    color: #555 !important;
+}
+
+form ::-moz-placeholder {
+    color: #555 !important;
+}
+
+form :-ms-input-placeholder {
+    color: #555 !important;
+}
+
+form ::-moz-focus-inner {
+    border: 0;
+}
+
+/*********************************************************************************/
+/* Social Icon Styles                                                            */
+/*********************************************************************************/
+
+ul.contact {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+ul.contact li {
+    display: inline-block;
+    padding: 0em 0.30em;
+    font-size: 1.5em;
+}
+
+ul.contact li span {
+    display: none;
+    margin: 0;
+    padding: 0;
+}
+
+ul.contact li a {
+    color: #FFF;
+}
+
+ul.contact li a:before {
+    margin: -3em 0 0 0;
+    display: inline-block;
+    background: #56569B;
+    width: 80px;
+    height: 80px;
+    line-height: 80px;
+    border-radius: 40px;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+ul.contact li a:hover {
+
+    background: none;
+}
+
+
+/*********************************************************************************/
+/* Button Style                                                                  */
+/*********************************************************************************/
+
+.button {
+    display: inline-block;
+    margin-top: 1em;
+    padding: 1em 2em 1em 2em;
+    background: #121218;
+    border-radius: 8px;
+    letter-spacing: 0.20em;
+    line-height: 1.8em;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 400;
+    font-size: 1.2em;
+    color: #FFF;
+}
+
+.button-small {
+    padding: 0.9em 2.5em;
+    margin-right: 9em;
+    background: #000000;
+    opacity: 0.6;
+    border-radius: 0px;
+    line-height: 0.5em;
+    font-size: 1em;
+}
+
+/*********************************************************************************/
+/* Header                                                                        */
+/*********************************************************************************/
+
+#header-wrapper {
+    overflow: hidden;
+    padding: 5em 0em;
+}
+
+#header {
+}
+
+/*********************************************************************************/
+/* Menu                                                                          */
+/*********************************************************************************/
+
+#menu {
+}
+
+#menu ul {
+    text-align: center;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 15px;
+}
+
+#menu li {
+    display: inline-block;
+}
+
+#menu li a, #menu li span {
+    display: inline-block;
+    margin-left: 0.50em;
+    padding: 1em 1.5em;
+    letter-spacing: 0.20em;
+    text-decoration: none;
+    font-size: 0.90em;
+    font-weight: 600;
+    text-transform: uppercase;
+    outline: 0;
+    color: #FFF;
+}
+
+#menu li:hover a, #menu li.active a, #menu li.active span {
+}
+
+#menu .current_page_item a {
+
+    color: #000;
+    background: #d9534f;
+    opacity: 1;
+}
+/*********************************************************************************/
+/* Wrapper                                                                       */
+/*********************************************************************************/
+
+#wrapper1 {
+    background: #242424;
+}
+
+#wrapper2 {
+    background: #EDEDED;
+}
+
+#wrapper3 {
+    overflow: hidden;
+    padding: 2em 0em;
+    background: #FFF;
+}
+
+#wrapper4 {
+    overflow: hidden;
+    padding: 8em 0em 4em 0em;
+}
+
+/*********************************************************************************/
+/* Newsletter                                                                    */
+/*********************************************************************************/
+
+#newsletter {
+    overflow: hidden;
+    padding: 8em 0em;
+    background: #EDEDED;
+    text-align: center;
+}
+
+#newsletter .title h2 {
+    color: rgba(0, 0, 0, 0.8);
+}
+
+#newsletter .content {
+    width: 600px;
+    margin: 0px auto;
+}
+
+/*********************************************************************************/
+/* Portfolio                                                                     */
+/*********************************************************************************/
+
+#portfolio{
+}
+
+
+#portfolio h3 {
+    display: block;
+    padding-bottom: 1em;
+    padding-left: 1.4em;
+    text-align: left;
+    text-transform: uppercase;
+    font-size: 1em;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+#portfolio p {
+    padding-left: 1.1em;
+    text-align: left;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+#portfolio .title {
+    text-align: center;
+}
+
+#portfolio .title h2 {
+    color: rgba(0, 0, 0, 0.8);
+}
+
+.column1,
+.column2,
+.column3,
+.column4 {
+    width: 282px;
+}
+
+.column1,
+.column2,
+.column3 {
+    float: left;
+    margin-right: 24px;
+}
+
+.column4 {
+    float: right;
+}
+
+/*********************************************************************************/
+/* Three Columns                                                                 */
+/*********************************************************************************/
+
+#three-column {
+    overflow: hidden;
+    text-align: center;
+    color: rgba(255, 255, 255, .6);
+}
+
+#three-column h2 {
+    margin: 1em 0em;
+    text-transform: uppercase;
+    font-size: 1.5em;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 1) !important;
+}
+
+#three-column .icon {
+    position: relative;
+    display: block;
+    margin: 0px auto 0.80em auto;
+    background: none;
+    line-height: 150px;
+    font-size: 4em;
+    width: 150px;
+    height: 150px;
+    border-radius: 100px;
+    border: 6px solid #121218;
+    text-align: center;
+    color: #FFF;
+
+}
+
+#three-column #tbox1,
+#three-column #tbox2,
+#three-column #tbox3 {
+    float: left;
+    width: 320px;
+    padding: 80px 40px 80px 40px;
+}
+
+#three-column .title {
+    letter-spacing: 0.10em;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+#three-column .title h2 {
+    font-size: 1.60em;
+    font-weight: 900;
+    font-family: 'Open Sans', sans-serif;
+    color: #00A4D9;
+}
+
+#three-column .title .byline {
+    padding-top: 0.50em;
+    font-size: 0.90em;
+    color: #858585;
+}
+
+#three-column .arrow-down {
+    border-top-color: #292929;
+}
+
+.box {
+    padding: 10px 0;
+    margin: 10px;
+    background: rgba(0,0,0,0.25);
+}
+
+.box:hover {
+    padding: 10px 0;
+    margin: 10px;
+    background: rgba(0,0,0,0.61);
+}
+
+.box1{
+    padding: 5px 0;
+    margin: 10px;
+    background: rgba(0,0,0,0.20);
+    margin-left:35%;
+    width: 30%;
+}

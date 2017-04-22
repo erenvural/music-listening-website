@@ -1,0 +1,64 @@
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Footprint on the MOON!</title>
+    <meta name="keywords" content=""/>
+    <meta name="description" content=""/>
+    <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900" rel="stylesheet"/>
+
+    <link rel="stylesheet" href="{{=URL('static', 'css/bootstrap.min.css')}}" media="all"/>
+    <link rel="stylesheet" href="{{=URL('static/template', 'assets/css/default.css')}}" media="all"/>
+    <link rel="stylesheet" href="{{=URL('static/template', 'assets/css/fonts.css')}}" media="all"/>
+    <link rel="shortcut icon" href="http://icanbecreative.com/resources/images/favico.ico"/>
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800"
+          rel="stylesheet" type="text/css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+
+    <meta property="og:url" content="http://demo.icanbecreative.com/css3-animated-search-box/"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:title" content="CSS3 Animated Search Box"/>
+    <meta property="og:description" content="Your description"/>
+    <meta property="og:image" content="http://demo.icanbecreative.com/css3-animated-search-box/featured.jpg"/>
+
+</head>
+<body>
+<div id="header-wrapper">
+    <div id="menu">
+        <ul>
+-
+        {{if auth.user:}}
+            <!--<div class="box1">-->
+            <p style="color: #ffeb41;font-family:Open Sans, Arial, Verdana;font-size: 15px;">
+                welcome {{=auth.user.first_name}}, enjoy the music !</p>
+            <br><br>
+        {{pass}}
+
+        {{if not auth.user:}}
+            {{menu = [('index', 'Homepage'),('genres','Genres'),('artists','Artists'),('albums', 'Albums'),
+        ('alltracks','All Tracks'),('about','About'),('report','Report'),('user','LogIn/Signup')]}}
+        {{elif auth.user.id == 1:}}
+            <!--<div class="box1">-->
+            {{menu = [('index', 'Homepage'),('genres','Genres'),('artists','Artists'),('albums', 'Albums'),
+        ('alltracks','All Tracks'),('contact','Contact'),('about','About'),('report','Report'),('management','Management'),('user','Profile'),('user/logout','Logout')]}}
+        {{else:}}
+            {{menu = [('index', 'Homepage'),('genres','Genres'),('artists','Artists'),('albums', 'Albums'),
+        ('alltracks','All Tracks'),('contact','Contact'),('about','About'),('report','Report'),('user','Profile'),('user/logout','Logout')]}}
+        {{pass}}
+
+        {{for m in menu:}}
+            <li {{if m[0] == request.function:}}class="current_page_item"{{pass}}>
+            {{if m[0]!='user':}}
+                <a href="{{=URL('default', m[0])}}">{{=m[1]}}</a>
+            {{else:}}
+                <a href="{{=URL('default', 'user', args="profile")}}">{{=m[1]}}</a>
+            {{pass}}
+            </li>
+        {{pass}}
+
+
+        </ul>
+    </div>
+
+</div>
+

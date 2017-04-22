@@ -1,0 +1,421 @@
+def index():
+    return locals()
+
+albums_list = [{
+        "album_id":"1",
+        "genre_id":"4",
+		"url": "mer_de_noms",
+        "image": "merdenoms.jpg",
+        "name": "Mer de Noms",
+        "owner": "A Perfect Circle",
+        "released": "May 23, 2000",
+        "genre": "Alternative rock",
+        "sold":"188.000",
+        "numberofsongs":"12",
+        "studio":"Virgin Records America",
+        "length":"44:25"},
+          {
+        "album_id":"2",
+        "genre_id":"1",
+		"url": "agaetis_byrjun",
+        "image": "agaetisbyrjun.png",
+        "name": "Agaetis Byrjun",
+        "owner": "Sigur Rós",
+        "released": "June 12, 1999",
+        "genre": "Post-rock",
+        "sold":"10.000",
+        "numberofsongs":"10",
+        "studio":"Ken Thomas",
+        "length":"71:51"},
+              {
+        "album_id":"3",
+        "genre_id":"7",
+		"url": "ikinci_cihan",	  
+        "image": "ikincicihan.jpg",
+        "name": "Ikinci Cihan",
+        "owner": "Birsen Tezer",
+        "released": "Jan 18, 2013",
+        "genre": "Jazz",
+        "sold":"unknown",
+        "numberofsongs":"9",
+        "studio":"Ada Music",
+        "length":"41:25"},
+              {
+        "album_id":"4",
+        "genre_id":"1",
+		"url": "dark_side_of_the_moon",
+        "image": "darksideofthemoon.jpg",
+        "name": "Dark Side of the Moon",
+        "owner": "Pink Floyd",
+        "released": "March 1, 1973",
+        "genre": "Progressive rock",
+        "sold":"50 million",
+        "numberofsongs":"15",
+        "studio":"Abbey Road Studios",
+        "length":" 	42:49"},
+              {
+        "album_id":"5",
+        "genre_id":"1",
+		"url": "back_in_black",
+        "image": "backinblack.jpg",
+        "name": "Back in Black",
+        "owner": "AC/DC",
+        "released": "July 25, 1980",
+        "genre": "Hard Rock",
+        "sold":"42 million",
+        "numberofsongs":"10",
+        "studio":"Compass Point Studios",
+        "length":"42:11"},
+              {
+        "album_id":"6",
+        "genre_id":"1",
+		"url": "uyandirmadan",
+        "image": "uyandirmadan.jpg",
+        "name": "Uyandırmadan",
+        "owner": "Pilli Bebek",
+        "released": "1999",
+        "genre": "Rock",
+        "sold":"unknown",
+        "numberofsongs":"10",
+        "studio":"Black Studio",
+        "length":"54:34"},
+		              {
+        "album_id":"7",
+        "genre_id":"6",
+		"url": "let_them_talk",
+        "image": "letthemtalk.jpg",
+        "name": "Let Them Talk",
+        "owner": "Hugh Laurie",
+        "released": "May 9, 2011",
+        "genre": "Blues",
+        "sold":"unknown",
+        "numberofsongs":"15",
+        "studio":"Warner Bros.",
+        "length":"57:56"},
+		{
+        "album_id":"8",
+        "genre_id":"7",
+		"url": "istanbul_vol1",
+		"image": "istanbulvol1.jpg",
+        "name": "Jazz İstanbul, Volume I",
+        "owner": "Jülide Özçelik",
+        "released": "Jan 3, 2008",
+        "genre": "Jazz",
+        "sold":"unknown",
+        "numberofsongs":"10",
+        "studio":"Kadıköy Music",
+        "length":"43:50"}
+              ]
+def albums():
+    global albums_list
+    return dict(albums = albums_list)
+
+artists_list = [
+		{
+        "artist_id":"1",
+        "album_id":"1",
+        "genre_id":"4",
+		"url": "a_perfect_circle",
+        "image": "aperfectcircle.jpg",
+        "name": "A Perfect Circle",
+		"members": "Billy Howerdel,Maynard J.Keenan,James Iha,Matt McJunkins,Jeff Friedl",
+        "albums": "Mer de Noms",
+        "genre": "Alternative rock",
+        "toptracks":"Passive, The Noose",
+        "yearsactive":"1999 - present", #–2004, 2010–
+        "awards":"-"},
+		{
+        "artist_id":"2",
+        "album_id":"2",
+        "genre_id":"1",
+		"url": "sigur_ros",
+        "image": "sigurros.jpg",
+        "name": "Sigur Rós",
+		"members": "Jónsi, Georg Hólm, Orri P. Dýrason, Kjartan Sveinsson",
+        "albums": "Agaetis Byrjun",
+        "genre": "Post-rock",
+        "toptracks":"Gong, Olsen olsen",
+        "yearsactive":"1994–present",
+        "awards":"2006 Student Academy Award"},
+		{
+        "artist_id":"3",
+        "album_id":"3",
+        "genre_id":"7",
+		"url": "birsen_tezer",
+        "image": "birsentezer.jpg",
+        "name": "Birsen Tezer",
+		"members": "-",
+        "albums": "Ikinci Cihan",
+        "genre": "Jazz",
+        "toptracks":"Çığlık çığlığa, Değirmenler, Hoşgeldin",
+        "yearsactive":"1998–present",
+        "awards":"-"},
+		{
+        "artist_id":"4",
+        "album_id":"4",
+        "genre_id":"1",
+		"url": "pink_floyd",
+        "image": "pinkfloyd.jpg",
+        "name": "Pink Floyd",
+		"members": "Roger Waters,David Gilmour,Richard Wright",
+        "albums": "Dark Side of The Moon",
+        "genre": "Progressive Rock",
+        "toptracks":"Money, Time",
+        "yearsactive":"1965-2014",  #–1994,2012–
+        "awards":"Best Engineered Non-Classical Album in Grammy,Best Original Song"},
+		{
+        "artist_id":"5",
+        "album_id":"5",
+        "genre_id":"1",
+		"url": "acdc",
+        "image": "acdc.jpg",
+        "name": "AC/DC",
+		"members": "Angus Young,Cliff Williams,Brian Johnson",
+        "albums": "Back in Black",
+        "genre": "Hard Rock",
+        "toptracks":"Back in Black, Hell Bells",
+        "yearsactive":"1973–present",
+        "awards":"APRA Awards,Grammy Awards,ARIA Music Awards"}
+              ]
+def artists():
+    global artists_list
+    return dict(artists = artists_list)
+
+genre_list = [
+		{
+        "genre_id":"1",
+        "image": "rock.jpg",
+        "name": "ROCK",
+        "culturalorigins": "1950s and 1960s, UK and US",
+        "popularin": "1950s-present"
+        },
+		{
+        "genre_id":"2",
+        "image": "turkishfolkmusic.jpg",
+        "name": "TURKISH FOLK MUSIC",
+        "culturalorigins": "14th-century, Anatolia and Middle East", ###
+        "popularin": "1300s-present"
+        },
+		{
+        "genre_id":"3",
+        "image": "pop.jpg",
+        "name": "POP",
+        "culturalorigins": "1950s and 1960s, UK and US",
+        "popularin": "1950s-present"
+        },
+		{
+        "genre_id":"4",
+        "image": "alternativerock.jpg",
+        "name": "ALTERNATIVE ROCK",
+        "culturalorigins": "Late 1970s to early 1980s, UK and US",
+        "popularin": "1970s-present"
+        },
+		{
+        "genre_id":"5",
+        "image": "classical.jpg",
+        "name": "CLASSICAL",
+        "culturalorigins": "1450s and 1600s, West Europe",
+        "popularin": "1450s-present"
+        },
+		{
+        "genre_id":"6",
+        "image": "blues.jpeg",
+        "name": "BLUES",
+        "culturalorigins": "Late 19th century, southern US",
+        "popularin": "1950s-present"
+        },
+		{
+        "genre_id":"7",
+        "image": "jazz.jpg",
+        "name": "JAZZ",
+        "culturalorigins": "Early 20th-century US",
+        "popularin": "1900s-present"
+        },
+		{
+        "genre_id":"8",
+        "image": "metal.jpg",
+        "name": "METAL",
+        "culturalorigins": "Late 1960s, UK and US",
+        "popularin": "1960s-present"
+        },
+		{
+        "genre_id":"9",
+        "image": "soundtrack.jpg",
+        "name": "SOUNDTRACK",
+        "culturalorigins": "Late 1960s, UK and US", #####
+        "popularin": "1960s-present"
+        }]
+def genres():
+    global genre_list
+    return dict(genres = genre_list)
+
+def contact():
+    return locals()
+
+def popup():
+    return locals()
+
+def about():
+    return locals()
+
+playlist =[{
+"playlist_id":"1",
+"artist_id":"1",
+"album_id":"1",
+"genre_id":"4",
+"image":"../artists/aperfectcircle.jpg",
+"name":"The Hollow",
+"album":"Mer de Noms",
+"owner": "A Perfect Circle",
+"length":"3:00"
+},
+{
+"playlist_id":"2",
+"artist_id":"1",
+"album_id":"1",
+"genre_id":"4",
+"image":"../artists/aperfectcircle.jpg",
+"name":"Magdalena",
+"album":"Mer de Noms",
+"owner": "A Perfect Circle",
+"length":"4:06"
+},
+{
+"playlist_id":"3",
+"artist_id":"2",
+"album_id":"2",
+"genre_id":"1",
+"image":"../artists/sigurros.jpg",
+"name":"Intro",
+"album":"Agaetis Byrjun",
+"owner": "Sigur Rós",
+"length":"1:39"
+},
+{
+"playlist_id":"4",
+"artist_id":"2",
+"album_id":"2",
+"genre_id":"1",
+"image":"../artists/sigurros.jpg",
+"name":"Svefn-G-Englar",
+"album":"Agaetis Byrjun",
+"owner": "Sigur Rós",
+"length":"10:06"
+},
+{
+"playlist_id":"5",
+"artist_id":"3",
+"album_id":"3",
+"genre_id":"7",
+"image":"../artists/birsentezer.jpg",
+"name":"Nefes",
+"album":"Ikinci Cihan",
+"owner": "Birsen Tezer",
+"length":"4:16"
+},
+{
+"playlist_id":"6",
+"artist_id":"3",
+"album_id":"3",
+"genre_id":"7",
+"image":"../artists/birsentezer.jpg",
+"name":"Delikanlı",
+"album":"Ikinci Cihan",
+"owner": "Birsen Tezer",
+"length":"5:07"
+},
+{
+"playlist_id":"7",
+"artist_id":"4",
+"album_id":"4",
+"genre_id":"1",       
+"image":"../artists/pinkfloyd.jpg",
+"name":"Time",
+"album":"Dark Side of The Moon",
+"owner": "Pink Floyd",
+"length":"6:53"
+},
+{
+"playlist_id":"8",
+"artist_id":"4",
+"album_id":"4",
+"genre_id":"1",
+"image":"../artists/pinkfloyd.jpg",
+"name":"On the Run",
+"album":"Dark Side of The Moon",
+"owner": "Pink Floyd",
+"length":"3:30"
+},
+{
+"playlist_id":"9",
+"artist_id":"5",
+"album_id":"5",
+"genre_id":"1",        
+"image":"../artists/acdc.jpg",
+"name":"Hells Bells",
+"album":"Back in Black",
+"owner": "AC/DC",
+"length":"5:12"
+},
+{
+"playlist_id":"10",
+"artist_id":"5",
+"album_id":"5",
+"genre_id":"1",        
+"image":"../artists/acdc.jpg",
+"name":"Shoot To Thrill",
+"album":"Back in Black",
+"owner": "AC/DC",
+"length":"5:15"}]
+
+def alltracks():
+    global playlist
+    return dict(play_list=playlist)
+
+def play():
+    global playlist, albums_list
+    album_name = request.args(0)
+    album_id = 0
+    album = []
+    for a in albums_list:
+        if a['name']  == album_name:
+            album_id = a['album_id']
+    for song in playlist:
+        if song['album_id'] == album_id
+    return dict(a=album_name)
+
+def user():
+    """
+    exposes:
+    http://..../[app]/default/user/login
+    http://..../[app]/default/user/logout
+    http://..../[app]/default/user/register
+    http://..../[app]/default/user/profile
+    http://..../[app]/default/user/retrieve_password
+    http://..../[app]/default/user/change_password
+    http://..../[app]/default/user/manage_users (requires membership in
+    http://..../[app]/default/user/bulk_register
+    use @auth.requires_login()
+        @auth.requires_membership('group name')
+        @auth.requires_permission('read','table name',record_id)
+    to decorate functions that need access control
+    """
+    return dict(form=auth())
+
+@cache.action()
+def download():
+    """
+    allows downloading of uploaded files
+    http://..../[app]/default/download/[filename]
+    """
+    return response.download(request, db)
+
+
+def call():
+    """
+    exposes services. for example:
+    http://..../[app]/default/call/jsonrpc
+    decorate with @services.jsonrpc the functions to expose
+    supports xml, json, xmlrpc, jsonrpc, amfrpc, rss, csv
+    """
+    return service()
